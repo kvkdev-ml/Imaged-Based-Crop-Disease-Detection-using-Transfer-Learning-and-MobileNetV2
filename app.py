@@ -7,8 +7,8 @@ from PIL import Image
 import numpy as np
 from warnings import filterwarnings
 import tensorflow as tf
-model=load_model(filepath=r'C:\Users\kumar\Desktop\Projects\SAT-SIRS\mobilenet_model.h5')
-data_dir = r"C:\Users\kumar\Desktop\Projects\SAT-SIRS\New Plant Diseases Dataset(Augmented)\train"
+model=load_model(filepath=r'model path')
+data_dir = r"path to dataset"
 batch_size = 3
 img_height = 224
 img_width = 224
@@ -66,4 +66,5 @@ def image_analysis():
         }
         return render_template('results.html',result=result_dict)
     return render_template('detection.html')
+
 app.run(debug=True,port=2023)
