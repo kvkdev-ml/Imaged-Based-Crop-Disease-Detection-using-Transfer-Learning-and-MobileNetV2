@@ -7,7 +7,7 @@ warnings.filterwarnings('ignore')
 width=224
 height=224
 batch_size=3
-data_dir=r'C:\Users\kumar\Desktop\Projects\SAT-SIRS\New Plant Diseases Dataset(Augmented)\train'
+data_dir=r'path to dataset'
 train_ds=tf.keras.utils.image_dataset_from_directory(
     data_dir,
     validation_split=0.2,
@@ -55,4 +55,5 @@ model.compile(
     metrics=['accuracy']
 )
 model.fit(train_ds, validation_data=val_ds, epochs=5)
+
 model.save('mobilenet_model.h5')
