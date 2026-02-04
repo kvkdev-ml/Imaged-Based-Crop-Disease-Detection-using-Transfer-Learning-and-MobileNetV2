@@ -1,8 +1,8 @@
 import tensorflow as tf
 import numpy as np
 from keras.models import load_model
-model=load_model(r'C:\Users\kumar\Desktop\Projects\SAT-SIRS\mobilenet_model.h5')
-data_dir = r'C:\Users\kumar\Desktop\Projects\SAT-SIRS\New Plant Diseases Dataset(Augmented)\train'
+model=load_model(r'your path to the model')
+data_dir = r'path to dataset'
 batch_size = 32
 img_height = 224
 img_width = 224
@@ -35,4 +35,5 @@ def predict_disease(image_path):
     confidence = 100 * np.max(predictions[0])
     return predicted_label, confidence
 path_input=input("Enter the path to the image:").strip('"')
+
 print(predict_disease(path_input))
